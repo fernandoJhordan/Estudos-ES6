@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //spread Espalhar / rest juntar
+        // rest
+
+        // ...param recebe os valores passados na chamada da função em forma de array ou seja Soma([3, 8, 5, 7, -8, 10, 115])
+        function soma(...param) {
+
+            let resultado = 0
+
+            //console.log(param)
+
+            //forEach iterando sobre o array contido em param e adicionando o valor a variavel v
+            //e a variavel resultado recebe o valor de v, e na segunda passagem da iteração recebe o valor dela mesma + o valor de v
+            param.forEach(v => resultado = resultado + v)
+
+            return resultado
+        }
+
+       // console.log( soma(3, 8, 5, 7, -8, 10, 115) )
+
+        //----------------------------------------------------------------------------
+
+        function Multiplicacao(m, ...p) {
+            //console.log(m)
+            let resultado = 0
+            //console.log(p)
+
+            p.forEach(v => resultado = resultado + m * v )
+
+            return resultado
+
+        }
+                    //o primeiro parametro 5 será recebido pela variavel (m) e os demais valores seram recebido em forma de array
+                    //no contexto rest ou seja [7, 12, 3, 49]
+        console.log( Multiplicacao(5, 7, 12, 3, 49) )
+        
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

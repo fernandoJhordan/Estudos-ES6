@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        let Carro = function() {
+            this.carro = 'Amarelo' 
+            this.modelo = 'Chevete'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 180
+
+            this.acelerar = function() {
+                let velocidade = this.getValocidadeAtual() + 50
+                if(velocidade > this.velocidadeMaxima) {
+                    velocidade = this.velocidadeMaxima
+                }
+                this.setVelocidadeAtual(velocidade)
+            }
+
+            this.getValocidadeAtual = function() {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function(velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
+
+        let carro = new Carro()
+
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+        carro.acelerar()
+        console.log(carro.velocidadeAtual)
+
+        let Carro2 = function() {
+
+            //criando a variavel velocidade maxima com "var" ela fica privada então nada consegue alterala fora do contexto da função 
+            var velocidadeMaxima = 180
+            var quilometrosRodados = 0
+
+            this.carro = 'Amarelo' 
+            this.modelo = 'Chevete'
+            this.velocidadeAtual = 0
+
+            this.acelerar = function() {
+                let velocidade = this.getValocidadeAtual() + 50
+                if(velocidade > velocidadeMaxima) {
+                    velocidade = velocidadeMaxima
+                }
+                this.setVelocidadeAtual(velocidade)
+
+                setQuilometrosRodados(0.07)
+                console.log(quilometrosRodados)
+            }
+
+            this.getValocidadeAtual = function() {
+                return this.velocidadeAtual
+            }
+
+            this.setVelocidadeAtual = function(velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+
+            var setQuilometrosRodados = (quilometros) => {
+                quilometrosRodados += quilometros
+            }
+        }
+
+        let carro2 = new Carro2()
+
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+        carro2.acelerar()
+        console.log(carro2.velocidadeAtual)
+
+        console.log(carro)
+        console.log(carro2)
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

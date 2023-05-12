@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        
+        //um software de marcenaria
+        //cachorro e passaro
+
+        //classe Pai no conceito de heranca
+        class Animal {
+            constructor() {
+                this.cor = ''
+                this.tamanho = null
+                this.peso = null
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+
+        }
+
+        //classe filha no conceito de herança herdando as caracteristicas da classe Animal
+        class Cachorro extends Animal {
+            constructor() {
+                super()
+                this.orelhas = 'Grandes e caidas'
+            }
+
+            correr() {
+                console.log('Correr')
+            }
+
+            rosnar() {
+                console.log('Rosnar')
+            }
+        }
+
+        //classe filha no conceito de herança herdando as caracteristicas da classe Animal
+        class Passaro extends Animal {
+            constructor() {
+                super()
+                this.bico = 'Curto'
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        //classe filha(cascata) no conceito de herança herdando as caracteristicas da classe Passaro 
+        //que também herda da classe Animal
+        class Papagaio extends Passaro{
+            constructor() {
+                super()
+                this.sabeFalar = true
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+
+        }
+
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+
+
+        cachorro.dormir()
+        passaro.dormir()
+        papagaio.falar()
+        papagaio.voar()
+        papagaio.dormir()
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

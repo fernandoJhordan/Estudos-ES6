@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        
+        //um software de marcenaria
+        //objetos envolvidos -> sofa
+        
+        class Sofa {
+
+            constructor(qtd_lugares, reclinavel, cor) {
+                this.qtdLugares = qtd_lugares
+                this.reclinavel = reclinavel
+                this.cor = cor
+            }
+
+            reclinarSofa() {
+                if(this.reclinavel === true){
+                    console.log('Reclinou')
+                } else {
+                    console.log('Sofá não é reclinavel')
+                }
+            }
+        }
+
+        let sofa = Array()
+
+        sofa.push( new Sofa(3, true, 'vermelho') )
+        sofa.push( new Sofa(2, false, 'verde') )
+
+        console.log( sofa )
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

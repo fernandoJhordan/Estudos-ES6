@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        
+        //um software de marcenaria
+        //cachorro e passaro
+
+        //classe Pai no conceito de heranca
+        class Animal {
+            constructor(cor, tamanho, peso) {
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+
+        }
+
+        //classe filha no conceito de herança herdando as caracteristicas da classe Animal
+        class Passaro extends Animal {
+            constructor(bico, cor, tamanho, peso) {
+                //parametros passados para o método construtor da classe Animal pelo operador super()
+                super(cor, tamanho, peso)
+                this.bico = bico
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        //classe filha(cascata) no conceito de herança herdando as caracteristicas da classe Passaro 
+        //que também herda da classe Animal
+        class Papagaio extends Passaro{
+            constructor(sabeFalar, cor, tamanho, peso) {
+                //parametros passados para o método construtor da classe Passaro pelo operador super()
+                super('Médio', cor, tamanho, peso)
+                this.sabeFalar = sabeFalar
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+
+        }
+
+        class Avestruz extends Passaro {
+            constructor() {
+                super('Grande', 'Branco e preto', 250, 15000)
+            }
+
+            enterrarCabeca() {
+                console.log('Enterrar a cabeça')
+            }
+
+            voar() {
+                console.log('Não sabe voar')
+            }
+        }
+                                    //parametros passados para o método construtor da classe Papagaio
+        let papagaio = new Papagaio(true, 'Verde', 25, 350)
+        papagaio.voar()
+
+        let avestruz = new Avestruz()
+        avestruz.enterrarCabeca()
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

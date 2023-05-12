@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //destructuring
+        let produto = {
+            descicao: 'Notebook',
+            preco: 1800,
+            detalhes: {
+                fabricante: 'abc',
+                modelo: undefined
+            }
+        }
+
+        //composição
+        //quando a apenas um objeto a composição é chamada de (é um) valor
+        //ja quando temos um objeto dentro de outro objeto temos a composição (tem um) detalhes
+
+        //token
+        //array => []
+        //objetos => {}
+
+        //let { descicao, preco } = produto
+
+
+        //let { descicao: d, preco: p = 1000, desconto = 5} = produto
+
+        let { detalhes: { fabricante, modelo } } = produto
+        console.log( fabricante, modelo = 'Não informado' )
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

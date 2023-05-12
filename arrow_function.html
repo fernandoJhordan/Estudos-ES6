@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        /*
+        let quadrado = function(x = 5) {
+            return x * x
+        }
+        */
+
+        //let quadrado = a => a * a
+        
+        /*let a = 'maçã';
+        let b = 'abacaxi';
+        let c = 'banana';
+        let d = 'laranja';
+        
+        let quadrado = (a, b, c, d) => {
+            return a + '<br />' + b + '<br />' + c + '<br />' + d
+        }
+        */
+
+        let parOuImpar = numero => numero % 2 === 0 ? 'par' : 'impar'
+        //numero % 2 === 0  -> depois da lógica vem o ponto de ? para marcar o fim do bloco de código
+        //se verdadeiro retorna par se não ':' retorna impar
+
+        document.write( parOuImpar(155) )
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>

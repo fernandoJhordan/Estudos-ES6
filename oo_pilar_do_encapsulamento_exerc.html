@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //um software de marcenaria
+        //Celular
+
+        class Celular {
+
+            constructor(power, ligacao) {
+                this._power = power
+                this._ligacao = ligacao
+            }
+
+            get ligacao() {
+                return this._ligacao
+            }
+
+            set power(ligDesl) {
+                if(ligDesl == this._power) {
+                    console.log(`Celular já está ${this._power} !!!`)
+                } else {
+                    this._power = ligDesl
+                    console.log(`O celular será ${this._power} !!!`)
+                } 
+            }
+
+        }
+
+        let cell = new Celular('Desligado', 'Ligando')
+
+        cell.power = 'Ligado'
+        document.write(cell.ligacao)
+
+    </script>
+</head>
+
+<body>
+
+    <div id="output"></div>
+    
+</body>
+</html>
